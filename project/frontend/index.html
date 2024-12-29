@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two-Tier App</title>
+</head>
+<body>
+    <h1>Welcome to the Two-Tier Application!</h1>
+    <p>Data from backend:</p>
+    <div id="data"></div>
+
+    <script>
+        fetch('http://backend:5000/data')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('data').textContent = JSON.stringify(data);
+            });
+    </script>
+</body>
+</html>
